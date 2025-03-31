@@ -1,5 +1,141 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--bg-color);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr ;
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  block-size: 100%;
+}
+
+.decorated-zone {
+  position: relative;
+  padding: 10px;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  border-style: solid;
+  border-color: var(--accent-color);
+  border-width: 0;
+}
+
+.decorated-zone::before {
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+
+  border-block-start-width: 1px;
+  border-inline-end-width: 1px;
+}
+
+.decorated-zone::after {
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+
+  border-block-end-width: 1px;
+  border-inline-start-width: 1px;
+}
+
+.header__rec {
+  position: absolute;
+  inset-inline-end: 21px;
+  inset-block-start: 11px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.header__rec .header__rec-dot {
+  display: inline-block;
+  block-size: 9px;
+  inline-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 100%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.header__theme-menu {
+  grid-row: 1 / 1;
+  justify-self: self-end;
+  margin-block-start: 65px;
+  margin-block-end: 65px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  color: var(--accent-color);
+  background-color: transparent;
+  border: none;
+  font-family: 'IBM Plex mono', monospace;
+  text-transform: lowercase;
+  cursor: pointer;
+  line-height: 18px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--nav-hover-color);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_type_light:focus-visible,
+.header__theme-menu-button_type_auto:focus-visible,
+.header__theme-menu-button_type_dark:focus-visible {
+  margin-block-end: -1px;
+  border-block-end: 1px solid var(--accent-color) ;
+  outline: none;
+}
+
+.header__title {
+  grid-row: 2 / 2;
+}
+
+.hero-title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  color: var(--hero-title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  justify-self: center;
+}
+
+.header__subtitle {
+  grid-row: 3 / 3;
+}
+
+.main-subtitle {
+  display: block;
+  background-color: var(--accent-color);
+  color: var(--main-subtitle-color);
+}
+
+.question-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.question-answer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer {
 }

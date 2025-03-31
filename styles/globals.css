@@ -20,6 +20,9 @@ h5,
 h6,
 p {
   margin: 0;
+  font-family: var(--main-font-family);
+  font-size: 18px;
+  line-height: var(--main-line-height);
 }
 
 ul {
