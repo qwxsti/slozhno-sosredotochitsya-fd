@@ -12,13 +12,15 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/dark.css" />
     <link rel="stylesheet" href="./styles/light.css" />
-    <link rel="icon" href="./images/favicon.ico" type="/images/ico" />
-    <link rel="icon" href="./images/favicon.svg" type="/images/svg" />
+    <link rel="icon" href="./images/favicon.ico" type="images/x-icon" />
+    <link rel="icon" href="./images/favicon.svg" type="images/svg" />
     <script src="./scripts/script.js"></script>
   </head>
   <body class="page">
     <header class="header decorated-zone">
-      <p class="header__rec">rec <span class="header__rec-dot"></span></p>
+      <p class="header__rec" aria-hidden="true">
+        rec <span class="header__rec-dot"></span>
+      </p>
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
           <li class="header__theme-menu-item">
@@ -182,11 +184,36 @@
     <section class="pictures question-section">
       <h3 class="main-title">А можно в картинках?</h3>
       <div class="pictures-grid">
-        <img class="picture" src="images/sunset.png" loading="lazy" />
-        <img class="picture" src="images/ice-cream.png" loading="lazy" />
-        <img class="picture" src="images/tape.png" loading="lazy" />
-        <img class="picture" src="images/books.png" loading="lazy" />
-        <img class="picture" src="images/street.png" loading="lazy" />
+        <img
+          class="picture"
+          src="images/sunset.png"
+          loading="lazy"
+          alt="Рисунок рассвета"
+        />
+        <img
+          class="picture"
+          src="images/ice-cream.png"
+          loading="lazy"
+          alt="Рисунок мороженного в стиле аниме"
+        />
+        <img
+          class="picture"
+          src="images/tape.png"
+          loading="lazy"
+          alt="Рисунок кассеты"
+        />
+        <img
+          class="picture"
+          src="images/books.png"
+          loading="lazy"
+          alt="Рисунок стопки книг"
+        />
+        <img
+          class="picture"
+          src="images/street.png"
+          loading="lazy"
+          alt="Рисунок японской улицы"
+        />
       </div>
     </section>
     <footer class="footer decorated-zone">
