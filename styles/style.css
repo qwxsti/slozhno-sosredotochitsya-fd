@@ -30,7 +30,7 @@
   block-size: 25px;
   inline-size: 25px;
   border-style: solid;
-  border-color: var(--accent-color);
+  border-color: var(--nav-color);
   border-width: 0;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .header__theme-menu-button {
-  color: var(--accent-color);
+  color: var(--nav-color);
   background-color: transparent;
   border: none;
   font-family: "IBM Plex mono", monospace;
@@ -104,13 +104,13 @@
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--nav-color);
   pointer-events: none;
 }
 
 .header__theme-menu-button:focus-visible {
   margin-block-end: -1px;
-  border-block-end: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--nav-color);
   outline: none;
 }
 
@@ -157,7 +157,7 @@
 
 .question {
   font-weight: bold;
-  color: var(--accent-color);
+  color: var(--main-title-color);
 }
 
 .question-answer {

@@ -7,6 +7,7 @@
 :root.theme-light {
   --main-font-family: 'IBM Plex mono', monospace;
   --nav-hover-color: rgb(50 49 45 / 0.4);
+  --nav-color: #353430;
   --link-hover-color: #353430;
   --accent-color: #ff8dcb;
   --hero-title-color: #ffc2e6;
@@ -31,6 +32,7 @@
   :root {
     --main-font-family: 'IBM Plex mono', monospace;
     --nav-hover-color: rgb(50 49 45 / 0.4);
+    --nav-color: #353430;
     --link-hover-color: #353430;
     --accent-color: #ff8dcb;
     --hero-title-color: #ffc2e6;
