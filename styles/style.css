@@ -171,6 +171,10 @@
   color: var(--main-text-color);
 }
 
+.question-answer .main-text:not(:last-child) {
+  margin-block-end: 10px;
+}
+
 .main-subtitle {
   display: block;
   font-weight: normal;
