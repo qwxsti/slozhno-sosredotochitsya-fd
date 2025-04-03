@@ -1,6 +1,10 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-color: var(--bg-color);
 }
 
@@ -8,10 +12,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  background-image: var(--bg-image);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  min-block-size: 668px;
   margin-block-end: 10px;
   block-size: 100vh;
 }
@@ -50,19 +51,26 @@
 
 .header__rec {
   position: absolute;
-  inset-inline-end: 21px;
+  display:inline-block;
+  inset-inline-end: 38px;
   inset-block-start: 11px;
   color: var(--accent-color);
   text-transform: uppercase;
+  font-family: 'IBM Plex mono';
+  font-size: 18px;
+  line-height: 25px;
 }
 
-.header__rec .header__rec-dot {
-  display: inline-block;
+.header__rec::after{
+  content: '';
+  position: absolute;
   block-size: 9px;
   inline-size: 9px;
   background-color: var(--accent-color);
   border-radius: 100%;
   box-shadow: 0 0 4px 2px var(--accent-color);
+  inset-block-start: 8px;
+  inset-inline-start: 42px;
 }
 
 .header__theme-menu {
@@ -87,8 +95,7 @@
   cursor: pointer;
   line-height: 18px;
   font-size: 18px;
-  block-size: 26px;
-  inline-size: 70px;
+  padding: 4px 13px;
 }
 
 .header__theme-menu-button:hover {
@@ -97,11 +104,10 @@
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--accent-color);
+  pointer-events: none;
 }
 
-.header__theme-menu-button_type_light:focus-visible,
-.header__theme-menu-button_type_auto:focus-visible,
-.header__theme-menu-button_type_dark:focus-visible {
+.header__theme-menu-button:focus-visible{
   margin-block-end: -1px;
   border-block-end: 1px solid var(--accent-color);
   outline: none;
@@ -176,11 +182,16 @@
 }
 
 .main-link:hover {
-  text-decoration: underline;
+  margin-block-end: -1px;
+  border-block-end: 1px solid var(--accent-color);
 }
 
 .main-link:focus-visible {
   outline: 1px solid var(--link-hover-color);
+}
+
+.how .question {
+  margin-block-end: -2px;
 }
 
 .pictures {
@@ -208,15 +219,35 @@
 
 .footer {
   display: flex;
-  block-size: 100vh;
   justify-content: center;
   align-items: center;
   margin-block-start: 38px;
+  min-block-size: 668px;
+  block-size: 100vh;
+}
+
+.footer .hero-title {
+  text-shadow: 2px 2px  0 var(--accent-color);
+}
+
+@media (width < 768px) {
+  .header__title {
+    margin-block-start: 2px;
+  }
+
+  .header__subtitle {
+    margin-block-start: -2px;
+  }
+
+  .footer .hero-title {
+    margin-block-start: 7px;
+  }
 }
 
 @media (width >= 768px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
+    min-block-size: 1024px;
   }
 
   .decorated-zone {
@@ -234,11 +265,8 @@
   }
 
   .header__rec {
-    position: absolute;
-    inset-inline-end: 30px;
+    inset-inline-end: 48px;
     inset-block-start: 20px;
-    color: var(--accent-color);
-    text-transform: uppercase;
   }
 
   .header__theme-menu {
@@ -263,7 +291,7 @@
 
   .question-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 0.9fr 1fr;
     grid-template-rows: 1fr;
     padding: 0 20px;
     margin-block-start: 80px;
@@ -275,7 +303,6 @@
 
   .why .question-answer {
     grid-column: 2 / 4;
-    min-inline-size: 472px;
     justify-self: right;
   }
 
@@ -291,10 +318,10 @@
   .how.question-section {
     gap: 10px;
     margin-block-start: 79px;
+    grid-template-columns: 1fr 0.88fr 1fr;
   }
 
   .how .question-answer {
-    min-inline-size: 472px;
     justify-self: right;
     margin: 0;
   }
@@ -320,9 +347,9 @@
 
   .pictures-grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 192px 230px 318px;
     gap: 20px;
-    max-block-size: minmax(780px, 1048px);
+    max-block-size: minmax(780px, 1048px)
   }
 
   .pictures-grid .picture:nth-child(1) {
@@ -352,10 +379,15 @@
 
   .footer {
     margin-block-start: 60px;
+    min-block-size: 1024px;
   }
 }
 
 @media (width >= 1024px) {
+  .header {
+    min-block-size: 768px;
+  }
+  
   .header__theme-menu {
     grid-row: 1 / 1;
     justify-self: center;
@@ -374,13 +406,13 @@
     margin-block-end: 57px;
   }
 
+  .why.question-section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .what .question {
     grid-column: 1 / 4;
     inline-size: calc(100% / 3);
-  }
-
-  .why .question-answer {
-    min-inline-size: 649px;
   }
 
   .how .question-answer {
@@ -403,5 +435,9 @@
   .pictures-grid {
     max-block-size: 1091px;
     grid-template-rows: 260px 315px 433px;
+  }
+
+  .footer {
+    min-block-size: 768px;
   }
 }

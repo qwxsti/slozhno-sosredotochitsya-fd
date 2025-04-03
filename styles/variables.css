@@ -18,3 +18,11 @@
   --link-shadow-color: #ff0070;
   --main-line-height: 23.4px;
 }
+
+@media (prefers-color-scheme: light) {
+  .theme-auto .page {
+    .header__rec {
+      display: none;
+    }
+  }
+}
