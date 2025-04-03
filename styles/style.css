@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   background-color: var(--bg-color);
 }
 
@@ -61,7 +62,7 @@
   line-height: 25px;
 }
 
-.header__rec::after{
+.header__rec::after {
   content: '';
   position: absolute;
   block-size: 9px;
@@ -107,7 +108,7 @@
   pointer-events: none;
 }
 
-.header__theme-menu-button:focus-visible{
+.header__theme-menu-button:focus-visible {
   margin-block-end: -1px;
   border-block-end: 1px solid var(--accent-color);
   outline: none;
